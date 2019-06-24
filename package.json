@@ -4,6 +4,10 @@
     "description": "Seamless navigation/resizing between VSCode and i3",
     "version": "0.0.1",
     "publisher": "sodeon",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sodeon/vscode-i3-integration.git"
+    },
     "engines": {
         "vscode": "^1.35.0"
     },
@@ -21,19 +25,19 @@
         "commands": [
             {
                 "command": "extension.vscode-i3-navigate-left",
-                "title": "i3 aware navigate left"
+                "title": "View: Navigate to the View on the Left (i3 aware)"
             },
             {
                 "command": "extension.vscode-i3-navigate-right",
-                "title": "i3 aware navigate right"
+                "title": "View: Navigate to the View on the Right (i3 aware)"
             },
             {
                 "command": "extension.vscode-i3-navigate-up",
-                "title": "i3 aware navigate up"
+                "title": "View: Navigate to the View Above (i3 aware)"
             },
             {
                 "command": "extension.vscode-i3-navigate-down",
-                "title": "i3 aware navigate down"
+                "title": "View: Navigate to the View Below (i3 aware)"
             }
         ]
     },

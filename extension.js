@@ -12,11 +12,12 @@ function activate(context) {
     function navigate(direction) {
         let Direction = direction[0].toUpperCase() + direction.slice(1);
 
-        let col = vscode.window.activeTextEditor.viewColumn;
+        let col = vscode.window.activeTextEditor ? vscode.window.activeTextEditor.viewColumn : 0;
         let cmd = vscode.commands.executeCommand('workbench.action.navigate' + Direction);
 
         cmd.then(() => {
-            let newCol = vscode.window.activeTextEditor.viewColumn;
+            // TODO: Detect when navigating between sidebar/panel/editor (current method won't work. Focused changes when change focus out of vscode)
+            let newCol     = vscode.window.activeTextEditor.viewColumn;
             if (direction == 'left' || direction == 'up') {
                 if (newCol >= col)
                     execSync('vim-tmux-i3-integration focus ' + direction);
@@ -31,15 +32,8 @@ function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.vscode-i3-navigate-right', () => {navigate('right')}));
     context.subscriptions.push(vscode.commands.registerCommand('extension.vscode-i3-navigate-up'   , () => {navigate('up'   )}));
     context.subscriptions.push(vscode.commands.registerCommand('extension.vscode-i3-navigate-down' , () => {navigate('down' )}));
-
-    // let disposable = vscode.commands.registerCommand('extension.helloWorld', function () {
-    //     vscode.window.showInformationMessage('Hello World!');
-    // });
-    // context.subscriptions.push(disposable);
 }
 exports.activate = activate;
-
-function deactivate() {}
 
 
 //-----------------------------------------------------------------------------
@@ -47,5 +41,5 @@ function deactivate() {}
 //-----------------------------------------------------------------------------
 module.exports = {
     activate,
-    deactivate
+    deactivate: () => {},
 }
