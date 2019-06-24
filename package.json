@@ -1,0 +1,51 @@
+{
+    "name": "vscode-i3-integration",
+    "displayName": "vscode-i3-integration",
+    "description": "Seamless navigation/resizing between VSCode and i3",
+    "version": "0.0.1",
+    "publisher": "sodeon",
+    "engines": {
+        "vscode": "^1.35.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.vscode-i3-navigate-left",
+        "onCommand:extension.vscode-i3-navigate-right",
+        "onCommand:extension.vscode-i3-navigate-up",
+        "onCommand:extension.vscode-i3-navigate-down"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.vscode-i3-navigate-left",
+                "title": "i3 aware navigate left"
+            },
+            {
+                "command": "extension.vscode-i3-navigate-right",
+                "title": "i3 aware navigate right"
+            },
+            {
+                "command": "extension.vscode-i3-navigate-up",
+                "title": "i3 aware navigate up"
+            },
+            {
+                "command": "extension.vscode-i3-navigate-down",
+                "title": "i3 aware navigate down"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^3.3.1",
+        "vscode": "^1.1.28",
+        "eslint": "^5.13.0",
+        "@types/node": "^10.12.21",
+        "@types/mocha": "^2.2.42"
+    }
+}
