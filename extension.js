@@ -16,8 +16,8 @@ function activate(context) {
         let cmd = vscode.commands.executeCommand('workbench.action.navigate' + Direction);
 
         cmd.then(() => {
-            // TODO: Detect when navigating between sidebar/panel/editor (current method won't work. Focused changes when change focus out of vscode)
-            let newCol     = vscode.window.activeTextEditor.viewColumn;
+            // TODO: Detect when navigating between sidebar/panel/editor (Using state.focused won't work. Focused changes when focusing into/out of vscode)
+            let newCol = vscode.window.activeTextEditor.viewColumn;
             if (direction == 'left' || direction == 'up') {
                 if (newCol >= col)
                     execSync('vim-tmux-i3-integration focus ' + direction);
