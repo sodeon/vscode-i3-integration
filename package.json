@@ -1,6 +1,6 @@
 {
     "name": "vscode-i3-integration",
-    "displayName": "vscode-i3-integration",
+    "displayName": "i3 Window Manager Integration",
     "description": "Seamless navigation/resizing between VSCode and i3",
     "version": "0.0.1",
     "publisher": "sodeon",
