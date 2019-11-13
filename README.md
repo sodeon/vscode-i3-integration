@@ -5,6 +5,9 @@ This is not yet mature and recommend not to use this.
 ## Features
 Seamless navigation between Visual Studio Code and i3.
 
+## Installation
+- Linux: Copy repo folder or symlink repo to `.vscode/extensions` in home directory.
+
 ## Extension Settings
 Extension exposes following commands for keybindings
 - `extension.vscode-i3-navigate-left`
